@@ -28,7 +28,7 @@
                 <div class="amount"></div>
                 <br>
                 <div class="form">
-                    <form action="buy.php" method="POST" onsubmit="return validate()">
+                    <form action="" method="POST" onsubmit="return validate()">
                         <label for="type"> Type
                             <select name="type" id="type">
                                 <option value="offical_sheet">Official Sheet</option>
@@ -86,7 +86,7 @@
                             <input type="text" name="name" id="name">
                         </label>
                         <br><br>
-                        <input class="finish-btn" type="submit" name="buy" value="Buy">
+                        <a href="order.html" style="text-decoration:none;color:white;"><input class="finish-btn" type="submit" name="buy" value="Buy"></a>
                         <a href="index.html"><button ><< Home</button></a>
                     </form>
                 </div>
@@ -101,7 +101,7 @@
             <p>myclassstore@gmail.com | +233558834322</p>
         </div>
     </div>
-    <script>
+<!--     <script>
         function validate(){            
             var color = $('#type').val();
             var numP = $('#numP').val();
@@ -131,7 +131,7 @@
         }
         
         
-        </script>
+        </script> -->
 
 
 </body>
