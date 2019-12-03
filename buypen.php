@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 function validate($data){
     $data = trim($data);
@@ -22,4 +22,4 @@ if(mysqli_query($con,$sql)){
     header("Refresh:0, url= index.html");
 }
 
-?>
+?> -->
