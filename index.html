@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
     <link rel="stylesheet" href="index.css">
     <title>MyClassStore</title>
 </head>
@@ -21,49 +26,38 @@
     <div>
         <img src="images/background.jpg" alt="background" width="100%" height="100%">
     </div>
-    
-    <div>
-        <table>
-            <tbody>
-                <tr>
-                    <th>Item</th>
-                    <th>Label</th>
-                    <th>Price</th>
-                    <th>Buy</th>
-                </tr>
-                <tr>
-                    <td><img src="images/pen.png" alt="Pen" width="40%" height="50%"> </td>
-                    <td><h4>Pen</h4></td>
-                    <td>GHc 1.00/pc</td>
-                    <td><a href="pen.html"><input type="submit" name="submit" value="BUY"></a></td>
-                </tr>
-                <tr>
-                    <td><img src="images/pencil.jpg" alt="Pencil" width="40%" height="50%"> </td>
-                    <td><h4>Pencil</h4></td>
-                    <td>GHc 0.50/pc</td>
-                    <td><a href="pencil.html"><input type="submit" name="submit" value="BUY"></a></td>
-                </tr>
-                <tr>
-                    <td><img src="images/marker.jpg" alt="Ruler" width="40%" height="50%"> </td>
-                    <td><h4>Marker</h4></td>
-                    <td>GHc 3.00/pc</td>
-                    <td><a href="marker.html"><input type="submit" name="submit" value="BUY"></a></td>
-                </tr>
-                <tr>
-                    <td><img src="images/paper.jpg" alt="Paper" width="40%" height="50%"> </td>
-                    <td><h4>Paper</h4></td>
-                    <td>GHc 0.20/pc</td>
-                    <td><a href="official_paper.html"><input type="submit" name="submit" value="BUY"></a></td>
-                </tr>
-                <tr>
-                    <td><img src="images/ruler.jpg" alt="Ruler" width="40%" height="50%"> </td>
-                    <td><h4>Ruler</h4></td>
-                    <td>GHc 1.00/pc</td>
-                    <td><a href="ruler.html"><input type="submit" name="submit" value="BUY"></a></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    <div class="row">
+      <div class="col-md-4">
+         <div class="card mb-4">
+            <img class="card-img-top" src="https://placeimg.com/290/180/any" alt="Card image cap">
+            <div class="card-body">
+               <h3 class="card-title">PIC PEN</h3>
+               <h4 class="card-text">GHc 1.00/piece</h4>
+               <a href="http://www.jquery2dotnet.com/" class="btn btn-outline-dark btn-sm">BUY</a>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-4">
+         <div class="card mb-4 border-dark">
+            <img class="card-img-top" src="https://placeimg.com/290/180/any" alt="Card image cap">
+            <div class="card-body">
+               <h3 class="card-title">PENCIL</h3>
+               <h4 class="card-text">GHc 0.50/piece</h4>
+               <a href="http://www.jquery2dotnet.com/" class="btn btn-dark btn-sm">BUY</a>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-4">
+         <div class="card mb-4 text-white bg-dark">
+            <img class="card-img-top" src="https://placeimg.com/290/180/any" alt="Card image cap">
+            <div class="card-body">
+               <h5 class="card-title">Card title</h5>
+               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+               <a href="http://www.jquery2dotnet.com/" class="btn btn-outline-light btn-sm">Go somewhere</a>
+            </div>
+         </div>
+      </div>
+   </div>
     <!-- <div class="store-items">
         <div class="pen"> 
             <img src="logo.jpg" alt="pen" width="40%" height="50%">
