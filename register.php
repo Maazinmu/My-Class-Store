@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 session_start();
 if(isset($_SESSION['logged_on'])){
     header("location: dashboard.html");
@@ -48,7 +48,7 @@ if(isset($_POST['register'])){
 
 
 
-?>
+?> -->
 
 
 
@@ -74,7 +74,7 @@ if(isset($_POST['register'])){
         <h3>(Seller)</h3>
         <br><br>
         <div>
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" onsubmit="return validate()">
+            <form action="" method="POST" onsubmit="">
                 
                 <label for="username">Username
                     <input type="text" name="user" id="user">
@@ -119,8 +119,8 @@ if(isset($_POST['register'])){
                 </label>
                 <br><br>
                 
-                <input type="submit" class="finish-btn" name="register" value="Register">
-                <a href="login.php"><input type="button" class="finish-btn" name="back" value="Back"></a>
+                <a href="dashboard.html" style="text-decoration:none;color:white;"><input type="submit" class="finish-btn" name="register" value="Register"></a>
+                <a href="login.html"><input type="button" class="finish-btn" name="back" value="Back"></a>
             </form>
         </div>
     </div>
@@ -131,7 +131,7 @@ if(isset($_POST['register'])){
         <p>myclassstore@gmail.com | +233558834322</p>
     </div>
 
-    <script>
+<!--     <script>
     function validate(){
         var username = $('#user').val();
         var phone = $('#phone').val();
@@ -161,6 +161,6 @@ if(isset($_POST['register'])){
 
     }
     
-    </script> 
+    </script>  -->
 </body>
 </html>
