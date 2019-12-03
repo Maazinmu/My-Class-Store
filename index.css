@@ -115,3 +115,11 @@ p  {
     background-color: whitesmoke;
     opacity: .5;
 }
+.pro-descr .description {
+    background-color:blue;
+    width:100%;
+    height:auto;
+    padding:5px;
+    text-align:center;
+    color:white;
+}
