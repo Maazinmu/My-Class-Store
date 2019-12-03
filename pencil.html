@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>MyClassStore - Pencil</title>
+</head>
+<body style="text-align: center;background-color: orange;">
+    
+    <div class="page">
+        <div class=""></div>
+        <div class="product">
+            
+            <div class="logo">
+                <h1><a href="index.html"> MyClassStore</a></h1>
+            </div>
+            <div class="product-pic">
+                <img src="images/pencil.jpg" alt="Logo" width="60%" height="60%">
+            </div>
+            <div class="pro-descr">
+                <div class="description">
+                    <h2>Pencil</h2>
+                    <h3>Ghc 0.50/piece</h3>
+                </div>
+                <div class="amount"></div>
+                <br>
+                <div class="form">
+                    <form action="buy.php" method="POST" onsubmit="return validate()">
+                        <label for="pencil_type"> Type
+                            <select name="type" id="type">
+                                <option value="any">Any</option>
+                                <option value="2b">2B</option>
+                                <option value="hb">HB</option>
+                                <option value="h5">H5</option>
+                            </select>
+                        </label>
+                    
+                        <br><br>    
+                    
+                        <label for="no_of_pieces"> Number of pieces
+                            <select name="numP" id="numP">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                        </label>
+                    
+                        <br><br>
+                    
+                        <label for="location"> Location
+                            <select name="location" id="location">
+                                <option value="NH1">NH1</option>
+                                <option value="NH2">NH2</option>
+                                <option value="NHA1">NHA1</option>
+                                <option value="NHA2">NHA2</option>
+                                <option value="NHA3">NHA3</option>
+                                <option value="NHA4">NHA4</option>
+                                <option value="NGF1">NGF1</option>
+                                <option value="NTF1">NTF1</option>
+                                <option value="NTF2">NTF2</option>
+                                <option value="spanish_lab">SPANISH LAB</option>
+                                <option value="bio_lab">BIOLOGY LAB</option>
+                                <option value="chem_lab">CHEMISTRY LAB</option>
+                                <option value="phy_lab">PHYSICS LAB</option>
+                                <option value="library">LIBRARY</option>
+                            </select>
+                        </label>
+                    
+                        <br><br>
+                    
+                        <label for="phone">Phone
+                            <input type="text" name="phone" id="phone">
+                        </label>
+                        <br><br>
+                        <label for="firstname">First Name
+                            <input type="text" name="name" id="name">
+                        </label>
+                        <br><br>
+                        <button class="finish-btn" type="button" name="buy">Buy</button>
+                        <input type="submit" name="back" value="<< Home">
+
+                    </form>
+                </div>
+            </div>    
+        </div>
+        <br><br><br><br><br>
+        <div class="footer">
+            <p>Copyright 2019 | MyClassStore Inc </p>
+            <p>myclassstore@gmail.com | +233558834322</p>
+        </div>
+    </div>
+
+    <script>
+            function validate(){
+                
+                var type = $('#type').val();
+                var numP = $('#numP').val();
+                var location = $('#location').val();
+                var phone = $('#phone').val();
+                var name = $('#name').val();
+                
+            if(type ==null || type==""){
+                $('#color').css("border-color","red");
+                return false;
+            }else if(numP==null){
+                $('#numP').css("border-color","red");
+                return false;
+            }else if(location==null){
+                $('#location').css("border-color","red");
+                return false;
+            }else if(phone=="" || phone.length < 10){
+                $('#phone').css("border-color","red");
+                return false;
+            }else if(name=="" || name==null){
+                $('#name').css("border-color","red");
+                return false;
+            }else{
+                return true;
+            }
+            
+            }
+            
+            
+            </script>
+            
+</body>
+</html>

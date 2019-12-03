@@ -1,0 +1,166 @@
+<?php
+session_start();
+if(isset($_SESSION['logged_on'])){
+    header("location: dashboard.html");
+}
+
+
+if(isset($_POST['register'])){
+    
+    $username = $_POST['user'];
+    $password = $_POST['password'];
+    $course = $_POST['course'];
+    $phone = $_POST['phone'];
+    $level = $_POST['level'];
+    $rep = $_POST['rep'];
+    $_SESSION['logged_in'] = "Yes";
+
+    function validate($data){
+        $data = trim($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+
+    $username = validate($username);
+    $password = validate($password);
+    $level = validate($level);
+    $phone = validate($phone);
+    $rep = validate($rep);
+    $course = validate($course);
+    $hash = password_hash($password,PASSWORD_DEFAULT);
+
+    $sql = "INSERT INTO users (name,hash,level,phone,rep,course) VALUES ('$username','$hash','$level','$phone','$rep','$course')";
+    
+    require_once('connect.php');
+    if(!mysqli_query($con,$sql)){
+        ?><script>alert("Try again, Not Registered!");</script><?php
+        header("Refresh:10; url= register.php");
+    }else{
+        header("Refresh:8; url= dashboard.php");
+    
+    }
+   
+}
+
+
+
+
+
+
+
+?>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>MyClassStore - Registration</title>
+</head>
+<body style="text-align: center;background-color: darkorange;">
+    
+    <a href="index.html" style="text-decoration: none;color:black;"><h1>My Class Store</h1></a>
+    <div class="loginp">
+        <h1>Register</h1>
+        <h3>(Seller)</h3>
+        <br><br>
+        <div>
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" onsubmit="return validate()">
+                
+                <label for="username">Username
+                    <input type="text" name="user" id="user">
+                </label>
+                <br><br>
+
+                <label for="phone">Phone
+                    <input type="text" name="phone" id="phone">
+                </label>
+                <br><br>
+
+                <label for="level">Level
+                <select name="level" id="level">
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                    <option value="300">300</option>
+                    <option value="400">400</option>
+                </select>
+                </label>
+                <br><br>
+
+                <label for="course">Course
+                    <input type="text" name="course" id="course">
+                </label>
+                <br><br>
+
+                <label for="course-rep">Course Rep?
+                <select name="rep" id="rep">Course Rep?
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+                </label>
+                <br><br>
+
+                <label for="password">Password
+                    <input type="password" name="password" id="password">
+                </label>
+                <br><br>
+
+                <label for="confirmPassword">Confirm Password
+                    <input type="password" name="password1" id="password1">
+                </label>
+                <br><br>
+                
+                <input type="submit" class="finish-btn" name="register" value="Register">
+                <a href="login.php"><input type="button" class="finish-btn" name="back" value="Back"></a>
+            </form>
+        </div>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="footer" id="contact">
+        <p>Copyright 2019 | MyClassStore Inc </p>
+        <p>myclassstore@gmail.com | +233558834322</p>
+    </div>
+
+    <script>
+    function validate(){
+        var username = $('#user').val();
+        var phone = $('#phone').val();
+        var course = $('#course').val();
+        var password = $('#password').val();
+        var password1 = $('#password1').val();
+
+
+        if(username == "" || username == null){
+            $('#user').css("border-color","red");
+            return false;
+        }else if(phone == "" || phone.length < 10){
+            $('#phone').css("border-color","red");
+            return false;
+        }else if(course == "" || course == null){
+            $('#course').css("border-color","red");
+            return false;
+        }else if(password == "" || password.length < 8){
+            $('#password').css("border-color","red");
+            return false;
+        }else if(password != password1){
+            $('#password1').css("border-color","red");
+            return false;
+        }else{
+            return true;
+        }
+
+    }
+    
+    </script> 
+</body>
+</html>

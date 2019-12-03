@@ -1,0 +1,110 @@
+<?php
+session_start();
+if(isset($_SESSION['logged_on'])){
+    header("location: dashboard.html");
+}
+
+
+if(isset($_POST['login'])){
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    function validate($data){
+        $data = trim($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+
+    $username = validate($username);
+    $password = validate($password);
+
+    require_once('connect.php');    
+    $result = mysqli_query($con,"SELECT hash,Id FROM users WHERE name = '$username'");
+
+    if(!$result){
+        header("location: login.php");
+    }else{
+        $results = mysqli_fetch_assoc($result);
+        $hash = $results['hash'];
+        if(password_verify($password,$hash)){
+            $_SESSION['logged_in'] = "Yes";
+            $_SESSION['id'] = $results['Id'];
+            header("location: dashboard.php");
+        }else{
+            header("location: login.php");
+        }
+    }
+
+
+
+}
+
+
+
+
+
+
+
+?>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>MyClassStore - Login</title>
+</head>
+<body style="text-align: center;background-color: darkorange;">
+    
+    <a href="index.html" style="text-decoration: none;color:white"><h1>My Class Store</h1></a>
+    <div class="loginp">
+        <h1>Log In</h1>
+        <h3>(Registered Seller)</h3>
+        <br><br>
+        <div>
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" onsubmit="return validatelogin()">
+                <label for="username">Username</label>
+                    <input type="text" name="username" id="username">
+                
+                <br><br>
+                <label for="password">Password</label>
+                    <input type="password" name="password" id="password">
+                
+                <br><br>
+                <input type="submit" class="finish-btn" name="login" value="Log In">
+                <a href="register.php"><input type="button" class="finish-btn" name="back" value="Create Account"></a>
+            </form>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="footer" id="contact">
+        <p>Copyright 2019 | MyClassStore Inc </p>
+        <p>myclassstore@gmail.com | +233558834322</p>
+    </div>
+    <script>
+    function validatelogin(){
+        var username = $('#username').val();
+        var password = $('#password').val();
+
+        if(username == "" || username == null){
+            $('#username').css("border-color","red");
+            return false;
+        }else if(password == "" || password.length < 8){
+            $('#password').css("border-color","red");
+            return false;
+        }else{
+            return true;
+        }
+
+    }
+    
+    </script>
+
+</body>
+</html>
