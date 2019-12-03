@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 session_start();
 if(isset($_SESSION['logged_on'])){
     header("location: dashboard.html");
@@ -46,7 +46,7 @@ if(isset($_POST['login'])){
 
 
 ?>
-
+ -->
 
 
 
@@ -68,7 +68,7 @@ if(isset($_POST['login'])){
         <h3>(Registered Seller)</h3>
         <br><br>
         <div>
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" onsubmit="return validatelogin()">
+            <form action="" method="POST" onsubmit="">
                 <label for="username">Username</label>
                     <input type="text" name="username" id="username">
                 
@@ -77,7 +77,7 @@ if(isset($_POST['login'])){
                     <input type="password" name="password" id="password">
                 
                 <br><br>
-                <input type="submit" class="finish-btn" name="login" value="Log In">
+                <a href="dashboard.html" style="text-decoration:none;color:white;"><input type="submit" class="finish-btn" name="login" value="Log In"></a>
                 <a href="register.php"><input type="button" class="finish-btn" name="back" value="Create Account"></a>
             </form>
         </div>
@@ -87,7 +87,7 @@ if(isset($_POST['login'])){
         <p>Copyright 2019 | MyClassStore Inc </p>
         <p>myclassstore@gmail.com | +233558834322</p>
     </div>
-    <script>
+<!--     <script>
     function validatelogin(){
         var username = $('#username').val();
         var password = $('#password').val();
@@ -104,7 +104,7 @@ if(isset($_POST['login'])){
 
     }
     
-    </script>
+    </script> -->
 
 </body>
 </html>
