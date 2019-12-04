@@ -91,6 +91,8 @@ footer {
     background-color: mintcream;
     bottom: 0px;
     margin-bottom: 0px;
+    position: absolute;
+    
     
 }
 table tbody tr th {
