@@ -89,6 +89,7 @@ div .store-items {
 }
 footer {
     background-color: mintcream;
+    bottom: 0px;
 }
 table tbody tr th {
     background-color: darkorange;
