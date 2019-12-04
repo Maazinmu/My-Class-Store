@@ -49,9 +49,8 @@ button a:hover {
     text-decoration: none;
     color: white;
     padding: 10px;
-    
 }
-.top-nav span a:hover {
+.top-nav span:hover {
     border:2px solid orange;
     color: blue;
     background-color: orange;
