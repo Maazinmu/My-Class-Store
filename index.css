@@ -42,13 +42,13 @@ button a:hover {
 }
 .top-nav {
     background-color: black;
-    height: 20px;
+    
     width: 100%;
 }
 .top-nav span a {
     text-decoration: none;
     color: white;
-    padding: 8px;
+    padding: 10px;
     
 }
 .top-nav span a:hover {
