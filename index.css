@@ -50,7 +50,7 @@ button a:hover {
     color: white;
     padding: 10px;
 }
-.top-nav span:hover {
+.top-nav span a:hover {
     border:2px solid orange;
     color: blue;
     background-color: orange;
