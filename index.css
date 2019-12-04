@@ -52,8 +52,9 @@ button a:hover {
     
 }
 .top-nav span a:hover {
-    border:2px double orange;
-    
+    border:2px solid orange;
+    color: blue;
+    background-color: orange;
 }
 .top-nav .mmenu {
     float: right;
@@ -79,9 +80,6 @@ button a:hover {
 
 }
 div .store-items {
-}
-.top-nav span a:hover {
-    color: blue;
 }
 .footer p {
     font-size: 13px;
